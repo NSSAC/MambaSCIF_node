@@ -2,8 +2,9 @@ FROM ghcr.io/nssac/mambascif
 
 RUN mkdir -p /run/secrets
 
+RUN micromamba create -n node_env
 RUN --mount=type=secret,id=gh_token \
-    micromamba install --name node_env nodejs=18
+    micromamba install --name node_env -y -c conda-forge nodejs=20
 
 RUN rm -rf /run/secrets || true
 
