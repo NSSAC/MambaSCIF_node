@@ -2,13 +2,13 @@
 This app exposes the nodejs binary/env
 
 %apprun node
-micromamba run --name node_env node $@
+exec micromamba run --name node_env node $@
 
 %appinstall sciduct
-  micromamba run --name node_env npm install -g sciduct-cli
+micromamba run --name node_env npm install -g sciduct-cli
 
 %apphelp sciduct
 SciDuct CLI
 
 %apprun sciduct
-micromamba run --name node_env sciduct $@
+exec micromamba run --name node_env sciduct $@
